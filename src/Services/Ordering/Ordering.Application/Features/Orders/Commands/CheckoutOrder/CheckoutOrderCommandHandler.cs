@@ -36,7 +36,7 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 
             _logger.LogInformation($"Order {newOrder.Id} is sucessfully created.");
 
-            await SendMail(newOrder);
+            await SendEmail(newOrder);
 
             return newOrder.Id;
         }
