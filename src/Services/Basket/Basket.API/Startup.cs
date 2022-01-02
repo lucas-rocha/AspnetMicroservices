@@ -36,10 +36,8 @@ namespace Basket.API
                 (options => options.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
             services.AddScoped<DiscountGrpcService>();
 
-            services.AddMassTransit(config =>
-            {
-                config.UsingRabbitMq((ctx, cfg) =>
-                {
+            services.AddMassTransit(config => {
+                config.UsingRabbitMq((ctx, cfg) => {
                     cfg.Host(Configuration["EventBusSettings:HostAddress"]);
                 });
             });
