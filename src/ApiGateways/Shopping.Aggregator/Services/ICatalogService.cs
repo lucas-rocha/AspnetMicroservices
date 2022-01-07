@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Shopping.Aggregator.Services
 {
-    interface ICatalogService
+    public interface ICatalogService
     {
         Task<IEnumerable<CatalogModel>> GetCatalog();
         Task<IEnumerable<CatalogModel>> GetCatalogByCategory(string category);
